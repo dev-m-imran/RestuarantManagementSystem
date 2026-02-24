@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="receiptPane"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.restuarantms.ReceiptController"
+      spacing="6"
+      alignment="CENTER"
+      prefWidth="280"
+      style="-fx-padding:10; -fx-background-color:white;">
+
+    <Label text="GDK Cafe"
+           style="-fx-font-size:18; -fx-font-weight:bold;"/>
+
+    <Label fx:id="dateLabel"/>
+    <Label text="------------------------------"/>
+
+    <VBox fx:id="itemsBox" spacing="4"/>
+
+    <Label text="------------------------------"/>
+
+    <Label fx:id="totalLabel"/>
+    <Label fx:id="amountLabel"/>
+    <Label fx:id="changeLabel"/>
+
+    <Label text="------------------------------"/>
+    <Label text="Thank you for your purchase!"/>
+
+</VBox>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restuarantms.LoginController">
+    <children>
+        <AnchorPane prefHeight="400.0" prefWidth="600.0">
+            <children>
+                <AnchorPane fx:id="login_page" prefHeight="400.0" prefWidth="300.0" styleClass="right-anchor-pane" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <ImageView fitHeight="150.0" fitWidth="207.0" layoutX="50.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../Images/gdkmain.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="71.0" layoutY="135.0" text="Login Account" textFill="DARKORANGE">
+                            <font>
+                                <Font name="Verdana Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="login_username" layoutX="40.0" layoutY="185.0" prefHeight="30.0" prefWidth="220.0" promptText="Username" styleClass="text-field" stylesheets="@style.css" />
+                        <PasswordField fx:id="login_password" layoutX="40.0" layoutY="224.0" onAction="#loginButton" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="text-field" stylesheets="@style.css" />
+                        <Button fx:id="login_button" layoutX="40.0" layoutY="296.0" mnemonicParsing="false" onAction="#loginButton" prefHeight="40.0" prefWidth="220.0" stylesheets="@style.css" text="Login" textFill="WHITE">
+                            <font>
+                                <Font name="Verdana Bold" size="12.0" />
+                            </font>
+                            <styleClass>
+                                <String fx:value="login-button" />
+                                <String fx:value="login-button:hover" />
+                            </styleClass>
+                        </Button>
+                        <Hyperlink fx:id="login_forgot_password" layoutX="42.0" layoutY="262.0" onAction="#switchForm" text="Forgot Password?" textFill="#9c9a9a" />
+                        <Button fx:id="login_imran_button" layoutX="40.0" layoutY="340.0" mnemonicParsing="false" onAction="#fillImranLogin" prefHeight="30.0" prefWidth="220.0" styleClass="create-button" stylesheets="@style.css" text="Login as Imran" textFill="#ff7a00">
+                            <font>
+                                <Font name="Verdana" size="10.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="update_password_anchor" prefHeight="400.0" prefWidth="300.0" styleClass="right-anchor-pane" stylesheets="@style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Label layoutX="49.0" layoutY="85.0" text="Forgot Password" textFill="DARKORANGE">
+                            <font>
+                                <Font name="Verdana Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="update_passwordBtn" layoutX="34.0" layoutY="298.0" mnemonicParsing="false" onAction="#updatePassword" prefHeight="40.0" prefWidth="220.0" stylesheets="@style.css" text="Update Password" textFill="WHITE">
+                            <font>
+                                <Font name="Verdana Bold" size="12.0" />
+                            </font>
+                            <styleClass>
+                                <String fx:value="login-button" />
+                                <String fx:value="login-button:hover" />
+                            </styleClass>
+                        </Button>
+                        <Button fx:id="update_backBtn" layoutX="34.0" layoutY="260.0" mnemonicParsing="false" onAction="#switchFormBack" prefHeight="30.0" prefWidth="220.0" styleClass="create-button" stylesheets="@style.css" text="Back" />
+                        <PasswordField fx:id="update_forgot_password" layoutX="34.0" layoutY="139.0" prefHeight="30.0" prefWidth="220.0" promptText="New Password" styleClass="text-field" stylesheets="@style.css" />
+                        <PasswordField fx:id="update_forgot_password_confirm" layoutX="34.0" layoutY="185.0" prefHeight="30.0" prefWidth="220.0" promptText="Confirm Password" styleClass="text-field" stylesheets="@style.css" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="forgot_password_anchor" prefHeight="400.0" prefWidth="300.0" styleClass="right-anchor-pane" stylesheets="@style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Label layoutX="49.0" layoutY="85.0" text="Forgot Password" textFill="DARKORANGE">
+                            <font>
+                                <Font name="Verdana Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="forgot_username" layoutX="34.0" layoutY="130.0" onAction="#checkForgotUsername" prefHeight="30.0" prefWidth="220.0" promptText="Username" styleClass="text-field" stylesheets="@style.css" />
+                        <ComboBox fx:id="forgot_questions_box" layoutX="34.0" layoutY="170.0" prefHeight="30.0" prefWidth="220.0" promptText="Security Question" styleClass="text-field" stylesheets="@style.css" />
+                        <TextField fx:id="forgot_answer" layoutX="34.0" layoutY="210.0" prefHeight="30.0" prefWidth="220.0" promptText="Answer" styleClass="text-field" stylesheets="@style.css" />
+                        <Button fx:id="forgot_proceedBtn" layoutX="34.0" layoutY="260.0" mnemonicParsing="false" onAction="#verifyForgotPassword" prefHeight="40.0" prefWidth="220.0" stylesheets="@style.css" text="Verify" textFill="WHITE">
+                            <font>
+                                <Font name="Verdana Bold" size="12.0" />
+                            </font>
+                            <styleClass>
+                                <String fx:value="login-button" />
+                                <String fx:value="login-button:hover" />
+                            </styleClass>
+                        </Button>
+                        <Button fx:id="forgot_backBtn" layoutX="34.0" layoutY="310.0" mnemonicParsing="false" onAction="#switchFormBack" styleClass="create-button" stylesheets="@style.css" text="Back" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="register_page" prefHeight="400.0" prefWidth="300.0" styleClass="right-anchor-pane" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <TextField fx:id="register_username" layoutX="40.0" layoutY="98.0" prefHeight="30.0" prefWidth="220.0" promptText="Username" styleClass="text-field" stylesheets="@style.css" />
+                        <Label layoutX="54.0" layoutY="47.0" text="Register Account" textFill="DARKORANGE">
+                            <font>
+                                <Font name="Verdana Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <PasswordField fx:id="register_password" layoutX="40.0" layoutY="142.0" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="text-field" stylesheets="@style.css" />
+                        <Button fx:id="signup_button" layoutX="40.0" layoutY="273.0" mnemonicParsing="false" onAction="#registerBTN" prefHeight="40.0" prefWidth="220.0" stylesheets="@style.css" text="Sign Up" textFill="WHITE">
+                            <font>
+                                <Font name="Verdana Bold" size="12.0" />
+                            </font>
+                            <styleClass>
+                                <String fx:value="login-button" />
+                                <String fx:value="login-button:hover" />
+                            </styleClass>
+                        </Button>
+                        <ComboBox fx:id="register_questions" layoutX="40.0" layoutY="185.0" onAction="#registerQuestionsList" prefHeight="30.0" prefWidth="220.0" promptText="Questions" styleClass="text-field" stylesheets="@style.css" />
+                        <TextField fx:id="register_answers" layoutX="40.0" layoutY="230.0" prefHeight="30.0" prefWidth="220.0" promptText="Answer" styleClass="text-field" stylesheets="@style.css" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="ms_page_left" prefHeight="400.0" prefWidth="300.0" styleClass="left-anchor-pane" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Label layoutX="64.0" layoutY="292.0" text="Create Account" textFill="#ff7a00">
+                            <font>
+                                <Font name="Verdana Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="ms_create_account_btn" layoutX="40.0" layoutY="330.0" mnemonicParsing="false" onAction="#switchAnchorPane" prefHeight="40.0" prefWidth="220.0" styleClass="create-button" stylesheets="@style.css" text="Create New Account" AnchorPane.bottomAnchor="30.0">
+                            <font>
+                                <Font name="Verdana Bold" size="12.0" />
+                            </font></Button>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="49.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../Images/gdkmain.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="46.0" layoutY="163.0" text="GDK Management " textFill="#ff7a00">
+                            <font>
+                                <Font name="Verdana Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="109.0" layoutY="187.0" text="System" textFill="#ff7a00">
+                            <font>
+                                <Font name="Verdana Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="ms_already_account_btn" layoutX="40.0" layoutY="330.0" mnemonicParsing="false" onAction="#switchAnchorPane" prefHeight="40.0" prefWidth="220.0" styleClass="create-button" stylesheets="@style.css" text="Already Have an Account?" visible="false">
+                            <font>
+                                <Font name="Verdana Bold" size="12.0" />
+                            </font>
+                        </Button>
+                    </children></AnchorPane>
+            </children></AnchorPane>
+    </children>
+</StackPane>

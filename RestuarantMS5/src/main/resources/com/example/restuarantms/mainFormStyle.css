@@ -1,0 +1,67 @@
+
+
+
+
+.header_nav{
+    -fx-background-color: #ff7a00;
+}
+.nav_bar{
+    -fx-background-color: linear-gradient(to bottom right, #000000d6, #000000);
+}
+
+.nav_button{
+    -fx-background-color: linear-gradient(to bottom right, #ff7a00, #ff4e00);
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff;
+}
+
+.nav_button:hover{
+    -fx-background-color: linear-gradient(to bottom right, #d77825, #88450f);
+}
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
+
+.white_bg{
+    -fx-background-color: #fff;
+}
+
+.radius{
+    -fx-background-radius: 8px;
+}
+.transparent{
+    -fx-background-color: transparent;
+}
+
+.table_view{
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-border-color: linear-gradient(to bottom right, #d77825, #88450f);
+    -fx-border-radius: 5px;
+    -fx-border-width: 1.5px;
+    -fx-text-fill: #fff;
+}
+.table_view .column-header-background{
+    -fx-background-color: linear-gradient(to bottom right, #d77825, #88450f);
+    -fx-background-radius: 5px 5px 0 0;
+    -fx-background-insets: 0 0 0 0;
+}
+.table_view .column-header, .filter{
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+}
+
+.table_view .column-header .label{
+    -fx-text-fill: #fff;
+}
+
+.text-field{
+    -fx-background-color: #000000;
+    -fx-text-fill: #fff;
+    -fx-prompt-text-fill: #ff9800;
+    -fx-border-color: #ff9800;
+    -fx-border-radius: 5;
+}
