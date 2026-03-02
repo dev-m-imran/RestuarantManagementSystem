@@ -38,10 +38,8 @@ build/
 ### Mac OS ###
 .DS_Store
 
-/.idea/
-/out/
-/target/
-/build/
+.idea
+./target
 
 *.db
 *.db-shm
